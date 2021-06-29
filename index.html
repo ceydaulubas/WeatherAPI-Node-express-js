@@ -1,30 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Open Weather Api2</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="customer.js" type="module"></script>
+
 </head>
 
 <body>
 
-    <h1>Cities Weather Info</h1>
     <div>
-        <form>
-            <input id="city-name-input" type="text" placeholder="Search location"><br>
-            <button id="get-city-btn" type="submit" value="Search">Search</button>
+        <form id="search-location">
+            <input id="search-bar" class="searchBar" type="text" placeholder="Search location" autocomplete="off">
+            <button class="submit" type="submit" value="Search" title="Search">Search</button>
         </form>
+
+
+        <span id="city" class="city"></span>
+        <br>
+        <span class="minmaxToday"><strong>Max<span id="max-today">33</span>°</strong> | Min<span id="min-today">18</span>°</span>
+        <span class="description" id="description"></span> <br>
+        <br>
+
+        <div>
+            <span id="temp"></span> <a class="active" id="celsius-link" href="#">°C</a><br>
+        </div>
+
+        <ul class="conditions">
+            <strong>Humidity:</strong>
+            <span id="humidity"></span>%</li>
+
+            <strong>Wind:</strong>
+            <span id="wind-speed"></span>km/h</li>
+        </ul>
+
+        <ul class="situations">
+            <strong>Sunrise:</strong>
+            <span id="sunrise"></span></li>
+
+            <strong>Sunset:</strong>
+            <span id="sunset"></span></li>
+        </ul>
+
     </div>
 
-    <h2 id="city-name"></h2>
-    <p id="city-temp"></p>
+    <footer>
+        <hr>
+        Open source code by Ceyda</a>
+    </footer>
 
-    
-    
+    <script src="/customer.js" type="module"></script>
 </body>
 
 </html>

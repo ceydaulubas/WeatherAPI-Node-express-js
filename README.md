@@ -1,3 +1,7 @@
-Front End tarafında bir tane Weather class’ı yazarak olabilecek verileri ve fonksiyonları (constructor, getter, setter, other functions) içinde tutup, bu class’ı da API’dan gelen data ile doldurmali / eşleştirmen (yani openweathermap.org’dan Weather JSON datası dönecek onu Weather class’ından oluşmuş bu objeye dönüştürerek bu üste bahsettiğim işlemleri yapmali.
+## Stack
 
-Backend kısmında da aslında sadece Node.js ve Express kullanarak bir server ayağa kaldırıp, Router kullanarak da front end kısmında request’leri bu local API’a gönderip buradan da asıl Weather API’a request göndermeli.
+Front End = Pure Js, hbs
+<br>
+Back End = Node Js, Express
+<br>
+browserify was used in order to build a bundle. 

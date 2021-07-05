@@ -1,0 +1,37 @@
+{{!-- <!DOCTYPE html> --}}
+<html>
+
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <div>
+        {{!-- {{>header}} --}}
+        <h2>Weather Forecast App</h2>
+        <article>
+            <form id="weatherLocation">
+                <input id="searchBar" type="text" placeholder="Search location...">
+                <button class="submit" type="submit" value="Search">Search</button>
+            </form>
+
+            <div class="weatherIcon"></div>
+            <div class="weatherInfo">
+                <div class="temperature"></div>
+                <div class="humidity"></div>
+                <div class="description">
+                    <div class="weatherCondition"></div>
+                    <div class="place"></div>
+                </div>
+            </div>
+            <div class="date"></div>
+        </article>
+    </div>
+
+    <script src= "js/bundle.js"></script>
+</body>
+
+</html>

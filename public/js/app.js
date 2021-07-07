@@ -1,5 +1,5 @@
 let fetchWeather = "/weather";
-// const weatherData = require("../../utils/weatherData");
+const weatherData = require("../../utils/weatherData");
 
 const weatherForm = document.querySelector("form");
 const search = document.querySelector("input");
@@ -21,39 +21,39 @@ weatherForm.addEventListener("submit", (event) => {
     locationElement.textContent = "";
     weatherCondition.textContent = "";
 
-    // weatherData(search.value, (message, { temperature, description, cityName, humidity }) => {
-    //     if (message) {
-    //         locationElement.textContent = message;
-    //         tempElement.textContent = "";
-    //         weatherCondition.textContent = "";
-    //     }
-    //     else {
-    //         locationElement.textContent = cityName;
-    //         tempElement.textContent = (temperature).toFixed(2) + String.fromCharCode(176);
-    //         weatherCondition.textContent = description;
-    //         humidityElement.textContent = (humidity) + String.fromCharCode(37);
-    //     }
-    // })
+    weatherData(search.value, (message, { temperature, description, cityName, humidity }) => {
+        if (message) {
+            locationElement.textContent = message;
+            tempElement.textContent = "";
+            weatherCondition.textContent = "";
+        }
+        else {
+            locationElement.textContent = cityName;
+            tempElement.textContent = (temperature).toFixed(2) + String.fromCharCode(176);
+            weatherCondition.textContent = description;
+            humidityElement.textContent = (humidity) + String.fromCharCode(37);
+        }
+    })
 
 
-    const locationApi = fetchWeather + "?address=" + search.value;
-    fetch(locationApi)
-        .then(response => {
-            console.log(response);
-            response.json()
-            .then(data => {
-                if (data.error) {
-                    locationElement.textContent = data.error;
-                    tempElement.textContent = "";
-                    weatherCondition.textContent = "";
-                }
-                else {
-                    console.log(data)
-                    locationElement.textContent = data.cityName;
-                    tempElement.textContent = (data.maxTemp).toFixed(2)+ String.fromCharCode(176);
-                    weatherCondition.textContent = data.description;
-                    humidityElement.textContent = (data.humidity);
-                }
-            })
-        });
+    // const locationApi = fetchWeather + "?address=" + search.value;
+    // fetch(locationApi)
+    //     .then(response => {
+    //         console.log(response);
+    //         response.json()
+    //         .then(data => {
+    //             if (data.error) {
+    //                 locationElement.textContent = data.error;
+    //                 tempElement.textContent = "";
+    //                 weatherCondition.textContent = "";
+    //             }
+    //             else {
+    //                 console.log(data)
+    //                 locationElement.textContent = data.cityName;
+    //                 tempElement.textContent = (data.maxTemp).toFixed(2)+ String.fromCharCode(176);
+    //                 weatherCondition.textContent = data.description;
+    //                 humidityElement.textContent = (data.humidity);
+    //             }
+    //         })
+    //     });
 })
